@@ -3,14 +3,13 @@
 
 import sys
 
-
 class Calculadora():
 
-    
+
     def plus(self, op1, op2):
         """ Function to sum the operands """
         return op1 + op2
-        
+
     def minus(self, op1, op2):
         """ Function to substract the operands """
         return op1 - op2
@@ -22,12 +21,12 @@ if __name__ == "__main__":
         op2 = int(sys.argv[3])
     except ValueError:
         sys.exit("Error: Non numerical parameters")
-        
+
     if sys.argv[2] == "suma":
         result = Calculadora().plus(op1, op2)
     elif sys.argv[2] == "resta":
         result = Calculadora().minus(op1, op2)
     else:
-        sys.exit('Operación sólo puede ser sumar, restar, multiplicar o dividir.')
+        sys.exit('Solo sumar, restar, multiplicar o dividir.')
 
     print(result)
