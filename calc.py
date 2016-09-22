@@ -3,7 +3,6 @@
 
 import sys
 
-
 def plus(op1, op2):
     """ Function to sum the operands """
     return op1 + op2
@@ -12,18 +11,18 @@ def plus(op1, op2):
 def minus(op1, op2):
     """ Function to substract the operands """
     return op1 - op2
-    
-def divide(op1,op2):
+
+def divide(op1, op2):
     """ Function to divide the operands """
     try:
         return op1 / op2
     except:
         sys.exit("Error: Invalid parameters")
-        
-def multiply(op1,op2):
+
+def multiply(op1, op2):
     """ Function to multiply the operands """
     return op1 * op2
-    
+
 
 if __name__ == "__main__":
     try:
@@ -41,6 +40,6 @@ if __name__ == "__main__":
     elif sys.argv[2] == "multiplica":
         result = multiply(operando1, operando2)
     else:
-        sys.exit('Operación sólo puede ser sumar, restar, multiplicar o dividir.')
+        sys.exit('Solo sumar, restar, multiplicar o dividir.')
 
     print(result)
