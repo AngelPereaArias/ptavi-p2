@@ -3,8 +3,8 @@
 
 import sys
 
-class Calculadora():
 
+class Calculadora():
 
     def plus(self, op1, op2):
         """ Function to sum the operands """
@@ -17,8 +17,8 @@ class Calculadora():
 
 if __name__ == "__main__":
     try:
-        op1 = int(sys.argv[1])
-        op2 = int(sys.argv[3])
+        op1 = float(sys.argv[1])
+        op2 = float(sys.argv[3])
     except ValueError:
         sys.exit("Error: Non numerical parameters")
 
