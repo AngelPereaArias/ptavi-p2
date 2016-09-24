@@ -4,6 +4,26 @@
 import calcoohija
 import sys
 
+
+def operation(elems):
+
+    result = float(elems[1])
+    operation_range = range(len(elems)-2)
+    for elem in operation_range:
+        operand = float(elems[elem+2])
+        if elems[0] == "suma":
+            result = calcoohija.CalculadoraHija().plus(result, operand)
+        elif elems[0] == "resta":
+            result = calcoohija.CalculadoraHija().minus(result, operand)
+        elif elems[0] == "multiplica":
+            result = calcoohija.CalculadoraHija().multiply(result, operand)
+        elif elems[0] == "divide":
+            result = calcoohija.CalculadoraHija().divide(result, operand)
+        else:
+            sys.exit('Solo sumar, restar, multiplicar o dividir.')
+    return result
+
+
 if __name__ == "__main__":
 
     try:
@@ -15,30 +35,4 @@ if __name__ == "__main__":
 
     for line in lines:
         elems = line.split(",")
-
-        result = int(elems[1])
-
-        if elems[0] == "suma":
-            for elem in range(len(elems)-2):
-                # print(str(result) + " + " + str(elems[elem+2]))
-                result = calcoohija.CalculadoraHija().plus(int(elems[elem+2]), result)
-
-        elif elems[0] == "resta":
-            for elem in range(len(elems)-2):
-                # print(str(result) + " - " + str(elems[elem+2]))
-                result = calcoohija.CalculadoraHija().minus(result, int(elems[elem+2]))
-
-        elif elems[0] == "multiplica":
-            for elem in range(len(elems)-2):
-                # print(str(result) + " * " + str(elems[elem+2]))
-                result = calcoohija.CalculadoraHija().multiply(int(elems[elem+2]), result)
-
-        elif elems[0] == "divide":
-            for elem in range(len(elems)-2):
-                # print(str(result) + " / " + str(elems[elem+2]))
-                result = calcoohija.CalculadoraHija().divide(result, int(elems[elem+2]))
-
-        else:
-            sys.exit('Solo sumar, restar, multiplicar o dividir.')
-
-        print(result)
+        print(operation(elems))
