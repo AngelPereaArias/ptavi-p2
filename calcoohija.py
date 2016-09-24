@@ -4,6 +4,7 @@
 import sys
 import calcoo
 
+
 class CalculadoraHija(calcoo.Calculadora):
     def multiply(self, op1, op2):
         """ Function to multiply the operands """
@@ -14,12 +15,12 @@ class CalculadoraHija(calcoo.Calculadora):
         try:
             return op1 / op2
         except:
-            sys.exit("Error: Invalid parameters")
+            sys.exit("Error: Unable to divide by zero")
 
 if __name__ == "__main__":
     try:
-        op1 = int(sys.argv[1])
-        op2 = int(sys.argv[3])
+        op1 = float(sys.argv[1])
+        op2 = float(sys.argv[3])
 
     except ValueError:
         sys.exit("Error: Non numerical parameters")
@@ -38,5 +39,5 @@ if __name__ == "__main__":
 
     else:
         sys.exit('Solo sumar, restar, multiplicar o dividir')
-        
+
     print(result)
